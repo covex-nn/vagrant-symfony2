@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+    ServerAdmin andrey.mindubaev@apnet.ru
+    ServerName www.local
+    ServerAlias *.local
+    DocumentRoot /vagrant/web
+    TransferLog /var/log/apache2/www.local_access.log
+    ErrorLog /var/log/apache2/www.local_error.log
+</VirtualHost>
+
+<Directory /vagrant/web>
+    Options Includes FollowSymLinks ExecCGI +Indexes
+    AllowOverride All
+    order allow,deny
+    allow from all
+</Directory>
