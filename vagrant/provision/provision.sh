@@ -30,9 +30,12 @@ apt_package_install_list=()
 # status before adding them to the apt_package_install_list array.
 apt_package_check_list=(
     ack
-    php5
     mysql-server
     mysql-client
+    php5
+    php5-mysql
+    php5-intl
+    php5-xsl
     default-jdk
     ant
 )
@@ -116,3 +119,12 @@ fi
 echo -e "\nSetup Apache2 configuration files..."
 cp /srv/config/symfony2.local /etc/apache2/sites-available/symfony2.local
 chmod 644 /etc/apache2/sites-available/symfony2.local
+a2ensite symfony2.local
+a2enmod rewrite
+service apache2 reload
+
+
+echo -e "\nSetup composer..."
+cd /tmp
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer

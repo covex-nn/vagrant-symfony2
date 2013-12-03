@@ -5,6 +5,12 @@
     DocumentRoot /vagrant/web
     TransferLog /var/log/apache2/www.local_access.log
     ErrorLog /var/log/apache2/www.local_error.log
+
+    php_value short_open_tag Off
+    php_value magic_quotes_gpc Off
+    php_value register_globals Off
+    php_value session.auto_start Off
+    php_value date.timezone "Europe/Moscow"
 </VirtualHost>
 
 <Directory /vagrant/web>
