@@ -6,6 +6,10 @@
     TransferLog /var/log/apache2/www.local_access.log
     ErrorLog /var/log/apache2/www.local_error.log
 
+    RequestHeader unset X-Forwarded-For
+    RequestHeader unset X-Forwarded-Host
+    RequestHeader unset X-Forwarded-Server
+
     php_value short_open_tag Off
     php_value magic_quotes_gpc Off
     php_value register_globals Off
