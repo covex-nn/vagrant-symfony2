@@ -117,10 +117,12 @@ fi
 
 
 echo -e "\nSetup Apache2 configuration files..."
+a2enmod rewrite
+a2enmod headers
 cp /srv/config/symfony2.local /etc/apache2/sites-available/symfony2.local
 chmod 644 /etc/apache2/sites-available/symfony2.local
 a2ensite symfony2.local
-a2enmod rewrite
+a2dissite default
 service apache2 reload
 
 
