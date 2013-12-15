@@ -6,9 +6,10 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--nictype1", "virtio"]
     v.customize ["modifyvm", :id, "--nictype2", "virtio"]
     v.customize ["modifyvm", :id, "--nictype3", "virtio"]
-    v.customize ["modifyvm", :id, "--memory", 1024]
+    v.customize ["modifyvm", :id, "--memory", 2048]
   end
 
+  config.vm.network :private_network, ip: "127.0.0.2"
   config.vm.network "forwarded_port", guest: 80, host: 8080
   config.vm.hostname = "www.local"
 
