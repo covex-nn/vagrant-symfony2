@@ -2,7 +2,7 @@ Vagrant Symfony2 basebox
 ========================
 
 * First of all use [packer-template](https://github.com/covex-nn/packer-templates) to create `ubuntu1204` basebox box
-* Run `vagrant package` to create vagrant for symfony
+* Run `vagrant package` to create vagrant box for Symfony2
 * Run `vagrant box add symfony-ubuntu1204-x64 package.box` to add box to your system
 
 Base box
