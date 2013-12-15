@@ -1,6 +1,9 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu1204"
-  config.vm.box_url = "http://vagrantstore.apnet.ru/ubuntu1204.box"
+
+  # Use https://github.com/covex-nn/packer-templates to create "ubuntu1204" base box
+  #
+  # config.vm.box_url = "http://vagrantstore.apnet.ru/ubuntu1204.box"
 
   config.vm.provider :virtualbox do |v|
     v.customize ["modifyvm", :id, "--nictype1", "virtio"]
