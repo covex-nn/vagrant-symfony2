@@ -10,4 +10,10 @@ Base box
 
 * MySQL 5.5
 * PHP 5.3 with `mysql`, `sqlite`, `intl`, `xsl`, `xmlrpc`, `mcrypt`, `gd`, `curl` and `xdebug` extensions
+* Composer
 * Ant
+
+Example
+-------
+
+https://github.com/apnet/symfony-standard-edition
