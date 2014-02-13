@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu1204"
-
+ 
   # Use https://github.com/covex-nn/packer-templates to create "ubuntu1204" base box
   #
   # config.vm.box_url = "http://vagrantstore.apnet.ru/ubuntu1204.box"
@@ -10,10 +10,10 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--nictype2", "virtio"]
     v.customize ["modifyvm", :id, "--nictype3", "virtio"]
     v.customize ["modifyvm", :id, "--memory", 2048]
+    v.name = "Symfony2_Ubuntu1204"
   end
 
-  config.vm.network :private_network, ip: "127.0.0.2"
-  config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network :private_network, ip: "192.168.80.80"
   config.vm.hostname = "www.local"
 
   # /srv/config/

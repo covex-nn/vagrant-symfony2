@@ -42,6 +42,9 @@ apt_package_check_list=(
     php5-gd
     php5-curl
     php5-xdebug
+    php-pear
+    php-apc
+    phpmyadmin
     default-jdk
     ant
 )
@@ -124,14 +127,17 @@ fi
 
 echo -e "\nSetup Apache2 and PHP configuration files..."
 
-cp /srv/config/symfony2.local /etc/apache2/sites-available/symfony2.local
-chmod 644 /etc/apache2/sites-available/symfony2.local
+cp /etc/phpmyadmin/apache.conf /etc/apache2/sites-available/010-phpmyadmin
+chmod 644 /etc/apache2/sites-available/010-phpmyadmin
+cp /srv/config/symfony2.local /etc/apache2/sites-available/100-symfony2
+chmod 644 /etc/apache2/sites-available/100-symfony2
 cp /srv/config/symfony2.ini /etc/php5/conf.d/symfony2.ini
 chmod 644 /etc/php5/conf.d/symfony2.ini
 
 a2enmod rewrite
 a2enmod headers
-a2ensite symfony2.local
+a2ensite 010-phpmyadmin
+a2ensite 100-symfony2
 a2dissite default
 service apache2 reload
 
@@ -140,3 +146,9 @@ echo -e "\nSetup composer..."
 cd /tmp
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
+
+
+echo -e "\nSetup PHPUnit..."
+pear channel-discover pear.phpunit.de
+pear channel-discover pear.symfony.com
+pear install --onlyreqdeps phpunit/PHPUnit
