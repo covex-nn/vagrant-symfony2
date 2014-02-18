@@ -15,6 +15,7 @@ Base box
 * Apache2
 * phpMyAdmin
 * Ant
+* nfs-common
 
 Example
 -------
