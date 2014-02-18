@@ -1,3 +1,5 @@
+is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
+
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu1204"
  
@@ -10,11 +12,17 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--nictype2", "virtio"]
     v.customize ["modifyvm", :id, "--nictype3", "virtio"]
     v.customize ["modifyvm", :id, "--memory", 2048]
+    v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     v.name = "Symfony2_Ubuntu1204"
   end
 
   config.vm.network :private_network, ip: "192.168.80.80"
   config.vm.hostname = "www.local"
+
+  if not is_windows
+    config.vm.synced_folder ".", "/vagrant", nfs: true
+  end
 
   # /srv/config/
   #

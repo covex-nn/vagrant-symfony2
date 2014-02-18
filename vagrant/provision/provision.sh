@@ -30,6 +30,7 @@ apt_package_install_list=()
 # status before adding them to the apt_package_install_list array.
 apt_package_check_list=(
     ack
+    nfs-common
     mysql-server
     mysql-client
     php5
