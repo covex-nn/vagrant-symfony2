@@ -48,6 +48,9 @@ apt_package_check_list=(
     phpmyadmin
     default-jdk
     ant
+    ruby-full
+    build-essential
+    rubygems
 )
 
 echo "Check for apt packages to install..."
@@ -143,13 +146,17 @@ a2dissite default
 service apache2 reload
 
 
-echo -e "\nSetup composer..."
+echo -e "\nInstall composer..."
 cd /tmp
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
 
-echo -e "\nSetup PHPUnit..."
+echo -e "\nInstall PHPUnit..."
 pear channel-discover pear.phpunit.de
 pear channel-discover pear.symfony.com
 pear install --onlyreqdeps phpunit/PHPUnit
+
+
+echo -e "\nInstall SASS..."
+gem install sass

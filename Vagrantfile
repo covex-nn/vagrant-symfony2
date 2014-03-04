@@ -14,7 +14,6 @@ Vagrant.configure("2") do |config|
     v.customize ["modifyvm", :id, "--memory", 2048]
     v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-    v.name = "Symfony2_Ubuntu1204"
   end
 
   config.vm.network :private_network, ip: "192.168.80.80"
