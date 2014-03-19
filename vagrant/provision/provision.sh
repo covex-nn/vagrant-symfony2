@@ -160,3 +160,4 @@ pear install --onlyreqdeps phpunit/PHPUnit
 
 echo -e "\nInstall SASS..."
 gem install sass
+gem install compass
