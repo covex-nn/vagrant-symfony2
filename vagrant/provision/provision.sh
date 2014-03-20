@@ -158,6 +158,5 @@ pear channel-discover pear.symfony.com
 pear install --onlyreqdeps phpunit/PHPUnit
 
 
-echo -e "\nInstall SASS..."
-gem install sass
+echo -e "\nInstall Compass..."
 gem install compass
