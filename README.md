@@ -15,6 +15,7 @@ Base box
 * Apache2
 * phpMyAdmin
 * Ant
+* Ruby with `compass` and `sass` gems
 * nfs-common
 
 Example
