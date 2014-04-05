@@ -15,9 +15,8 @@ Base box
 * Apache2
 * phpMyAdmin
 * Ant
-* Ruby with `compass` and `sass` gems
 * nfs-common
-* Sass 3.2.9, Compass 0.12.2
+* Ruby with `sass-3.2.9` and `compass-0.12.2` gems
 
 Usage example
 -------------
