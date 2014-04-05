@@ -16,8 +16,9 @@ Base box
 * phpMyAdmin
 * Ant
 * nfs-common
+* Sass 3.2.9, Compass 0.12.2
 
-Example
--------
+Usage example
+-------------
 
 https://github.com/apnet/symfony-standard-edition

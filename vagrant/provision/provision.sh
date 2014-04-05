@@ -159,4 +159,5 @@ pear install --onlyreqdeps phpunit/PHPUnit
 
 
 echo -e "\nInstall Compass..."
-gem install compass
+gem install sass -v 3.2.9
+gem install compass -v 0.12.2
