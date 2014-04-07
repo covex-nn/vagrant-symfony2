@@ -1,11 +1,7 @@
 is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu1204"
- 
-  # Use https://github.com/covex-nn/packer-templates to create "ubuntu1204" base box
-  #
-  # config.vm.box_url = "http://vagrantstore.apnet.ru/ubuntu1204-latest.box"
+  config.vm.box = "covex/ubuntu1204-x64"
 
   config.vm.provider :virtualbox do |v|
     v.customize ["modifyvm", :id, "--nictype1", "virtio"]
@@ -23,16 +19,6 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder ".", "/vagrant", nfs: true
   end
 
-  # /srv/config/
-  #
-  # If a server-conf directory exists in the same directory as your Vagrantfile,
-  # a mapped directory inside the VM will be created that contains these files.
-  # This directory is currently used to maintain various config files for php and
-  # nginx as well as any pre-existing database files.
-  #
   config.vm.synced_folder "vagrant/config/", "/srv/config"
-
-  # Provisioning
-  #
   config.vm.provision "shell", path: "vagrant/provision/provision.sh"
 end
