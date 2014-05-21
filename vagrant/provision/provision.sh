@@ -30,7 +30,6 @@ apt_package_install_list=()
 # status before adding them to the apt_package_install_list array.
 apt_package_check_list=(
     ack
-    nfs-common
     mysql-server
     mysql-client
     php5
@@ -51,9 +50,12 @@ apt_package_check_list=(
     ruby-full
     build-essential
     rubygems
+    samba
+    nfs-kernel-server
 )
 
 echo "Check for apt packages to install..."
+DEBIAN_FRONTEND=noninteractive
 
 # Loop through each of our packages that should be installed on the system. If
 # not yet installed, it should be added to the array of packages to install.
@@ -162,3 +164,13 @@ echo -e "\nInstall Compass..."
 gem install sass -v 3.2.9
 gem install compass -v 0.12.2
 gem install bootstrap-sass -v 3.1.1
+
+
+echo -e "\nSetup Samba configuration files..."
+mkdir /home/vagrant/share
+chown vagrant:vagrant /home/vagrant/share
+cp /srv/config/smb.conf /etc/samba/smb-vagrant-share.conf
+chmod 644 /etc/samba/smb-vagrant-share.conf
+echo "[vagrant]" >> /etc/samba/smb.conf
+echo "include = /etc/samba/smb-vagrant-share.conf" >> /etc/samba/smb.conf
+service smbd restart
