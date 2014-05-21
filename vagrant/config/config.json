@@ -1,3 +1,5 @@
 {
-    "cache-dir" : "/vagrant/.composer"
+    "config" : {
+        "cache-dir" : "/vagrant/.composer"
+    }
 }
