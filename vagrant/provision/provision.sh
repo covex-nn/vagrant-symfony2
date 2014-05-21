@@ -152,12 +152,17 @@ echo -e "\nInstall composer..."
 cd /tmp
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
+mkdir /home/vagrant/.composer
+cp /srv/config/composer.json /home/vagrant/.composer/composer.json
+chmod 644 /home/vagrant/.composer/composer.json
+cp /srv/config/config.json /home/vagrant/.composer/config.json
+chmod 644 /home/vagrant/.composer/config.json
+chown -R vagrant:vagrant /home/vagrant/.composer
 
 
 echo -e "\nInstall PHPUnit..."
-pear channel-discover pear.phpunit.de
-pear channel-discover pear.symfony.com
-pear install --onlyreqdeps phpunit/PHPUnit
+sudo -u vagrant composer install --working-dir /home/vagrant/.composer
+echo "export PATH=~/.composer/vendor/bin:\$PATH" >> /home/vagrant/.bashrc
 
 
 echo -e "\nInstall Compass..."

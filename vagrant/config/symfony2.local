@@ -10,6 +10,8 @@
     RequestHeader unset X-Forwarded-Host
     RequestHeader unset X-Forwarded-Server
 
+    SetEnv SYMFONY__VAGRANT__ENV 1
+
     php_value short_open_tag Off
     php_value magic_quotes_gpc Off
     php_value register_globals Off
