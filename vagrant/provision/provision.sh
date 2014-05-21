@@ -160,8 +160,9 @@ cp /srv/config/composer.json /root/.composer/composer.json
 mkdir /home/vagrant/.composer
 cp /srv/config/composer.json /home/vagrant/.composer/composer.json
 cp /srv/config/config.json /home/vagrant/.composer/config.json
-chmod -R 644 /root/.composer
-chmod -R 644 /home/vagrant/.composer
+chmod -R 664 /root/.composer
+chmod -R 664 /home/vagrant/.composer
+chmod 755 /home/vagrant/.composer
 chown -R vagrant:vagrant /home/vagrant/.composer
 
 
