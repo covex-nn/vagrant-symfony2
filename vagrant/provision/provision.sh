@@ -152,11 +152,16 @@ echo -e "\nInstall composer..."
 cd /tmp
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
+
+
+echo -e "\nConfigure composer..."
+mkdir /root/.composer
+cp /srv/config/composer.json /root/.composer/composer.json
 mkdir /home/vagrant/.composer
 cp /srv/config/composer.json /home/vagrant/.composer/composer.json
-chmod 644 /home/vagrant/.composer/composer.json
 cp /srv/config/config.json /home/vagrant/.composer/config.json
-chmod 644 /home/vagrant/.composer/config.json
+chmod -R 644 /root/.composer
+chmod -R 644 /home/vagrant/.composer
 chown -R vagrant:vagrant /home/vagrant/.composer
 
 
