@@ -20,5 +20,11 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.synced_folder "vagrant/config/", "/srv/config"
-  config.vm.provision "shell", path: "vagrant/provision/provision.sh"
+
+  config.vm.provision "shell", path: "vagrant/provision/apt-get.sh"
+  config.vm.provision "shell", path: "vagrant/provision/mysql.sh"
+  config.vm.provision "shell", path: "vagrant/provision/apache.sh"
+  config.vm.provision "shell", path: "vagrant/provision/compass.sh"
+  config.vm.provision "shell", path: "vagrant/provision/samba.sh"
+  config.vm.provision "shell", path: "vagrant/provision/composer.sh"
 end
