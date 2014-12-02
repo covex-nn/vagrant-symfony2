@@ -29,7 +29,6 @@ apt_package_install_list=()
 # virtual machine. We'll then loop through each of these and check individual
 # status before adding them to the apt_package_install_list array.
 apt_package_check_list=(
-    ack
     mysql-server
     mysql-client
     php5
@@ -47,9 +46,7 @@ apt_package_check_list=(
     phpmyadmin
     default-jdk
     ant
-    ruby-full
     build-essential
-    rubygems
     samba
     nfs-kernel-server
 )
