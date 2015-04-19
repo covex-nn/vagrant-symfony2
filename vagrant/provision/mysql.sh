@@ -1,4 +1,3 @@
-echo -e "\nSetup MySQL configuration files..."
 # Configuration for MySQL
 cp /srv/config/my.cnf /etc/mysql/my.cnf
 echo " * /srv/config/my.cnf -> /etc/mysql/my.cnf"

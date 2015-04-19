@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "vagrant/provision/apt-get.sh"
   config.vm.provision "shell", path: "vagrant/provision/mysql.sh"
   config.vm.provision "shell", path: "vagrant/provision/apache.sh"
-  config.vm.provision "shell", path: "vagrant/provision/compass.sh"
+  config.vm.provision "shell", path: "vagrant/provision/ruby.sh"
   config.vm.provision "shell", path: "vagrant/provision/samba.sh"
   config.vm.provision "shell", path: "vagrant/provision/composer.sh"
 end

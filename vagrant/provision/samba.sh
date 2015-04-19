@@ -1,4 +1,3 @@
-echo -e "\nSetup Samba configuration files..."
 mkdir /home/vagrant/share
 chown vagrant:vagrant /home/vagrant/share
 cp /srv/config/smb.conf /etc/samba/smb-vagrant-share.conf

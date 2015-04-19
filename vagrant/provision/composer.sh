@@ -1,16 +1,11 @@
-echo -e "\nInstall composer..."
 cd /tmp
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
-
-echo -e "\nConfigure composer for root user..."
 mkdir --mode=700 /root/.composer
 cp /srv/config/config.json /root/.composer/config.json
 chmod 664 /root/.composer/config.json
 
-
-echo -e "\nConfigure composer for vagrant user..."
 mkdir /home/vagrant/.composer
 cp /srv/config/composer.json /home/vagrant/.composer/composer.json
 cp /srv/config/config.json /home/vagrant/.composer/config.json

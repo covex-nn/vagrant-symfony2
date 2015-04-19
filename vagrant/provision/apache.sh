@@ -1,5 +1,3 @@
-echo -e "\nSetup Apache2 and PHP configuration files..."
-
 cp /etc/phpmyadmin/apache.conf /etc/apache2/sites-available/010-phpmyadmin
 chmod 644 /etc/apache2/sites-available/010-phpmyadmin
 cp /srv/config/symfony2.local /etc/apache2/sites-available/100-symfony2
