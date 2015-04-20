@@ -27,4 +27,5 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "vagrant/provision/ruby.sh"
   config.vm.provision "shell", path: "vagrant/provision/samba.sh"
   config.vm.provision "shell", path: "vagrant/provision/composer.sh"
+  config.vm.provision "shell", path: "vagrant/provision/swap.sh"
 end

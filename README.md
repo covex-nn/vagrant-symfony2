@@ -7,7 +7,7 @@ Usage
 ```
 Vagrant.configure("2") do |config|
   config.vm.box = "covex/symfony-ubuntu1204-x64"
-  config.vm.box_version = ">= 2.1.2"
+  config.vm.box_version = ">= 2.1.3"
 end
 ```
 
