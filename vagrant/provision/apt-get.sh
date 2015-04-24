@@ -49,7 +49,6 @@ apt_package_check_list=(
     ant
     build-essential
     software-properties-common
-    python-software-properties
     samba
     nfs-kernel-server
 )

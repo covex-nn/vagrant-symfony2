@@ -6,20 +6,29 @@ Usage
 
 ```
 Vagrant.configure("2") do |config|
+  config.vm.box = "covex/symfony-ubuntu1404-x64"
+  config.vm.box_version = ">= 3.0.0"
+end
+```
+
+or
+
+```
+Vagrant.configure("2") do |config|
   config.vm.box = "covex/symfony-ubuntu1204-x64"
-  config.vm.box_version = ">= 2.1.3"
+  config.vm.box_version = ">= 2.2.0"
 end
 ```
 
 Contents
 --------
 
-* Apache2
+* Apache 2.4
 * MySQL 5.5
-* PHP 5.3.10 with `apc`, `mysql`, `sqlite`, `intl`, `xsl`, `xmlrpc`, `mcrypt`, `gd`, `curl` and `xdebug` extensions
+* PHP 5.5.9 with `apc`, `mysql`, `sqlite`, `intl`, `xsl`, `xmlrpc`, `mcrypt`, `gd`, `curl` and `xdebug` extensions
 * Composer
-* PHPUnit 4.6.5 and PHP_CodeSniffer 2.3.0s
+* PHPUnit 4.6.5 and PHP_CodeSniffer 2.3.1
 * phpMyAdmin
-* Ruby 1.9.1
+* Ruby 1.9.3
 * Ant
 * Nfs-common and Samba
