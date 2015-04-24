@@ -20,6 +20,6 @@ Contents
 * Composer
 * PHPUnit 4.6.5 and PHP_CodeSniffer 2.3.0s
 * phpMyAdmin
-* Ruby with `sass-3.4.13`, `compass-1.0.3` and `bootstrap-sass-3.3.4` gems
+* Ruby 1.9.1
 * Ant
 * Nfs-common and Samba
