@@ -19,6 +19,34 @@
     php_value date.timezone "Europe/Moscow"
 </VirtualHost>
 
+<VirtualHost *:443>
+    ServerName www.local
+    ServerAlias *.local
+    DocumentRoot /vagrant/web
+    TransferLog /var/log/apache2/ssl.local_access.log
+    ErrorLog /var/log/apache2/ssl.local_error.log
+
+    RequestHeader unset X-Forwarded-For
+    RequestHeader unset X-Forwarded-Host
+    RequestHeader unset X-Forwarded-Server
+
+    SetEnv SYMFONY__VAGRANT__ENV 1
+
+    php_value short_open_tag Off
+    php_value magic_quotes_gpc Off
+    php_value register_globals Off
+    php_value session.auto_start Off
+    php_value date.timezone "Europe/Moscow"
+
+    SSLEngine on
+    SSLHonorCipherOrder on
+    SSLProtocol -ALL +SSLv3 +TLSv1
+    SSLHonorCipherOrder on
+    SSLCipherSuite !aNULL:!eNULL:!EXPORT:!DSS:!DES:RC4-SHA:RC4-MD5:ALL
+    SSLCertificateFile /etc/apache2/ssl/cert.pem
+    SSLCertificateKeyFile /etc/apache2/ssl/key.pem
+</VirtualHost>
+
 <Directory /vagrant/web>
     Options +Includes +FollowSymLinks +ExecCGI +Indexes
     AllowOverride All

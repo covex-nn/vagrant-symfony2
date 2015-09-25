@@ -7,7 +7,7 @@ Usage
 ```
 Vagrant.configure("2") do |config|
   config.vm.box = "covex/symfony-ubuntu1404-x64"
-  config.vm.box_version = ">= 3.0.0"
+  config.vm.box_version = ">= 3.1.0"
 end
 ```
 
@@ -16,14 +16,14 @@ or
 ```
 Vagrant.configure("2") do |config|
   config.vm.box = "covex/symfony-ubuntu1204-x64"
-  config.vm.box_version = ">= 2.2.0"
+  config.vm.box_version = ">= 2.3.0"
 end
 ```
 
 Contents
 --------
 
-* Apache 2.4
+* Apache 2.4 with HTTPS support for *.local sites
 * MySQL 5.5
 * PHP 5.5.9 with `apc`, `mysql`, `sqlite`, `intl`, `xsl`, `xmlrpc`, `mcrypt`, `gd`, `curl` and `xdebug` extensions
 * Composer
