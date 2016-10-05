@@ -40,7 +40,7 @@
 
     SSLEngine on
     SSLHonorCipherOrder on
-    SSLProtocol -ALL +SSLv3 +TLSv1
+    SSLProtocol -ALL +TLSv1
     SSLHonorCipherOrder on
     SSLCipherSuite !aNULL:!eNULL:!EXPORT:!DSS:!DES:RC4-SHA:RC4-MD5:ALL
     SSLCertificateFile /etc/apache2/ssl/cert.pem

@@ -32,18 +32,20 @@ apt_package_check_list=(
     apache2
     mysql-server
     mysql-client
-    php5
-    php5-mysql
-    php5-sqlite
-    php5-intl
-    php5-xsl
-    php5-xmlrpc
-    php5-mcrypt
-    php5-gd
-    php5-curl
-    php5-xdebug
+    php7.0
+    php7.0-mysql
+    php7.0-sqlite3
+    php7.0-intl
+    php7.0-xsl
+    php7.0-xmlrpc
+    php7.0-mcrypt
+    php7.0-gd
+    php7.0-curl
+    php7.0-zip
+    php-xdebug
     php-pear
-    php-apc
+    php-apcu
+    libapache2-mod-php
     phpmyadmin
     default-jdk
     ant
@@ -51,6 +53,8 @@ apt_package_check_list=(
     software-properties-common
     samba
     nfs-kernel-server
+    mc
+    git
 )
 
 DEBIAN_FRONTEND=noninteractive

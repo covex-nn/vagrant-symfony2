@@ -1,7 +1,7 @@
 is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "covex/ubuntu1404-x64"
+  config.vm.box = "covex/ubuntu1604-x64"
 
   config.vm.provider :virtualbox do |v|
     v.customize ["modifyvm", :id, "--nictype1", "virtio"]
